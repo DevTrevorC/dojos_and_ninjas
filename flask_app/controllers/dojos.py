@@ -17,6 +17,5 @@ def adding_dojo():
     data = {
         'name' : request.form['name']
     }
-    
     Dojo.add_dojo(data)
     return redirect('/dojos')
