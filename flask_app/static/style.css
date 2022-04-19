@@ -4,8 +4,12 @@
     font-size: 1.1rem;
 }
 
-body, input ,textarea, a, select {
+body, input ,textarea, select {
     background-color: #333;
+    color: #0ef;
+}
+
+a {
     color: #0ef;
 }
 
@@ -35,11 +39,7 @@ input, label, select, a {
 .container {
     width: 60%;
     text-align: center;
-    border: #0ef solid 3px;
-}
-
-.addSpace {
-    margin: .75em;
+    border: #0ef solid 2px;
 }
 
 .notAsWide {
@@ -55,7 +55,6 @@ h1 {
 table, td {
     border: #0ef solid 1px;
     border-collapse: collapse;
-
 }
 
 table {

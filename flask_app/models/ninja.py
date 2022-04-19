@@ -11,13 +11,13 @@ class Ninja:
         self.dojo_id = ['dojo_id']
 
     @classmethod
-    def get_ninjas(cls, id):
+    def get_ninjas(cls, data):
+        
         query = "SELECT * FROM ninjas WHERE dojo_id = %(id)s;"
         return connectToMySQL('dojos_and_ninjas_schema').query_db(query, id)
 
     @classmethod
-    def add_ninja(cls, data, id):
-        query = "INSERT INTO ninjas (first_name, last_name, age, created_at, updated_at, dojo_id VALUES (%(first_name)s, %(last_name)s, %(age)s, now(), now(), %(id)s"
-        return connectToMySQL('dojos_and_ninjas_schema').query_db(query, data, id)
-
-        # need to look at relationships tab in learn platform. Only need to make add ninja and show dojo pages work.
+    def new_ninja(cls, data):
+        query = "INSERT INTO ninjas (first_name, last_name, age, created_at, updated_at, dojo_id) VALUES (%(first_name)s, %(last_name)s, %(age)s, now(), now(), %(dojo_id)s);"
+        result = connectToMySQL('dojos_and_ninjas_schema').query_db(query, data)
+        return result

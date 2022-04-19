@@ -9,7 +9,7 @@
 </head>
 <body>
     <div>
-        <h1>(REPLACE) Ninjas</h1>
+        <h1>{{dojo.name}} Ninjas</h1>
         <div class="container">
             <table>
                 <thead>
@@ -18,20 +18,13 @@
                     <th>Age</th>
                 </thead>
                 <tbody>
+                    {% for ninja in dojo.ninjas %}
                     <tr>
-                        <td>Todd</td>
-                        <td>Howard</td>
-                        <td>42</td>
+                        <td>{{ninja.first_name}}</td>
+                        <td>{{ninja.last_name}}</td>
+                        <td>{{ninja.age}}</td>
                     </tr>
-                    <tr>
-                        <td>Todd</td>
-                        <td>Howard</td>
-                        <td>42</td>
-                    </tr>
-                    <tr>
-                        <td>Todd</td>
-                        <td>Howard</td>
-                        <td>42</td>
+                    {% endfor %}
                     </tr>
                 </tbody>
             </table>

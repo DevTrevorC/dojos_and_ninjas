@@ -11,28 +11,29 @@
     <div>
         <h1>New Ninja</h1>
         <div class="container notAsWide">
-            <form action="">
+            <form action="/ninjas/create" method="POST">
                 <div>
-                    <label for="">Dojo:</label>
-                    <select name="" id="">
-                        <option value="">something</option>
-                        <option value="">something else</option>
+                    <label for="select_dojo">Dojo:</label>
+                    <select name="dojo_id" id="select_dojo">
+                        {% for dojo in dojos %}
+                        <option value="{{dojo.id}}">{{dojo.name}}</option>
+                        {% endfor %}
                     </select>
                 </div>
                 <div>
-                    <label for="">First Name:</label>
-                    <input type="text" name="" id="">
+                    <label for="first_name">First Name:</label>
+                    <input type="text" name="first_name">
                 </div>
                 <div>
-                <label for="">Last Name:</label>
-                <input type="text" name="" id="">
+                <label for="last_name">Last Name:</label>
+                <input type="text" name="last_name">
                 </div>
                 <div>
-                    <label for="">Age:</label>
-                    <input type="text" name="" id="">
+                    <label for="age">Age:</label>
+                    <input type="text" name="age">
                 </div>
                 <div>
-                    <input type="submit" name="" id="" value="Create">
+                    <input type="submit" value="Create">
                 </div>
             </form>
         </div>
